@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Richiedi tessera</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/4.9.0/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/4.9.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/4.9.0/firebase-database.js"></script>
+  <!-- <script defer src="/__/firebase/4.9.0/firebase-messaging.js"></script> -->
+  <!-- <script defer src="/__/firebase/4.9.0/firebase-storage.js"></script> -->
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+  <link rel="stylesheet" type="text/css" href="styles/form.css">
+
+</head>
+
+<body>
+  <section>
+    <form class="pg__form" novalidate>
+      <div class="pg__formfield">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" onblur="validateText('name')">
+      </div>
+      <div class="pg__formfield">
+        <label for="surname">Cognome:</label>
+        <input type="text" id="surname" onblur="validateText('surname')">
+      </div>
+      <div class="pg__formfield">
+        <label for="email">Email:</label>
+        <input type="email" id="email" onblur="validateEmail('email')">
+      </div>
+    </form>
+    <div class="button">
+      <button id="submitButton" disabled onclick="submitRequest()">Richiedi tessera</button>
+    </div>
+  </section>
+
+  <script src="scripts/validation.js"></script>
+  <script src="scripts/submit.js"></script>
+</body>
+
+</html>
