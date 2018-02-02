@@ -1,5 +1,5 @@
 function writeNewUser(name, surname, email) {
-  firebase.database().ref().set({
+  firebase.database().ref('richieste/' + name + surname).set({
     Nome: name,
     Cognome: surname,
     Email: email
@@ -7,10 +7,14 @@ function writeNewUser(name, surname, email) {
 }
 
 function submitRequest() {
-  console.log('Form submitted');
+  validateForm();
+
+  formIsValid ?
   // var userName = document.getElementById('name').value;
   // var userSurname = document.getElementById('surname').value;
   // var userEmail = document.getElementById('email').value;
-  //
-  // writeNewUser(userName, userSurname, userEmail);
+  // console.log(userName + userSurname + userEmail);
+  // console.log('formErrors:');
+  // console.log(formErrors);
+  writeNewUser(userName, userSurname, userEmail) : console.log('Errors in fields: ' + formErrors);
 }

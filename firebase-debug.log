@@ -1,0 +1,31 @@
+[debug] [2018-02-02T09:08:02.412Z] ----------------------------------------------------------------------
+[debug] [2018-02-02T09:08:02.415Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login --reauth
+[debug] [2018-02-02T09:08:02.416Z] CLI Version:   3.17.4
+[debug] [2018-02-02T09:08:02.416Z] Platform:      darwin
+[debug] [2018-02-02T09:08:02.416Z] Node Version:  v7.10.0
+[debug] [2018-02-02T09:08:02.416Z] Time:          Fri Feb 02 2018 10:08:02 GMT+0100 (CET)
+[debug] [2018-02-02T09:08:02.416Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=600160863&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2018-02-02T09:08:14.628Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ { code: '4/_rJ1RFWUUbPJyTluJHS8QRo5CQgicWAKneF_H9vNGA8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  redirect_uri: 'http://localhost:9005',
+  grant_type: 'authorization_code' } 
+ Fri Feb 02 2018 10:08:14 GMT+0100 (CET)
+[debug] [2018-02-02T09:08:14.682Z] Token Fetch Error: Error
+    at FirebaseError (/usr/local/lib/node_modules/firebase-tools/lib/error.js:11:17)
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:34:23)
+    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:186:22)
+    at emitOne (events.js:96:13)
+    at Request.emit (events.js:191:7)
+    at Request.onRequestError (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:878:8)
+    at emitOne (events.js:96:13)
+    at ClientRequest.emit (events.js:191:7)
+    at TLSSocket.socketErrorListener (_http_client.js:358:9)
+    at emitOne (events.js:96:13)

@@ -17,6 +17,7 @@
   <script defer src="/__/firebase/init.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/normalize.css">
   <link rel="stylesheet" type="text/css" href="styles/form.css">
+  <link rel="stylesheet" type="text/css" href="styles/tab-richieste.css">
 
 </head>
 
@@ -37,12 +38,17 @@
       </div>
     </form>
     <div class="button">
-      <button id="submitButton" disabled onclick="submitRequest()">Richiedi tessera</button>
+      <button id="submitButton" onclick="submitRequest()">Richiedi tessera</button>
     </div>
+    <div class="button secondary">
+      <button id="readPendingButton" onclick="readPending()">Vedi richieste</button>
+    </div>
+    <div id="listofcontent"></div>
   </section>
 
   <script src="scripts/validation.js"></script>
   <script src="scripts/submit.js"></script>
+  <script src="scripts/readPending.js"></script>
 </body>
 
 </html>
