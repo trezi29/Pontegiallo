@@ -20,15 +20,28 @@ function readPending() {
         var userData = [userName, userSurname, userEmail];
         console.log(userData);
 
-
-        // var paraName = document.createElement("p");
-        // var node = document.createTextNode("This is new.");
-        // para.appendChild(node);
-        //
-        // var element = document.getElementById("div1");
-        // element.appendChild(para);
+        createCard(userName, userSurname, userEmail);
       });
     });
+}
+
+function createCard(userName, userSurname, userEmail) {
+  var newCard = document.createElement('div');
+  newCard.className = "pg__tab-richiesta";
+
+  var paraName = document.createElement('p');
+  var paraSurname = document.createElement('p');
+  var paraEmail = document.createElement('p');
+
+  paraName.innerHTML = userName;
+  paraSurname.innerHTML = userSurname;
+  paraEmail.innerHTML = userEmail;
+
+  newCard.appendChild(paraName);
+  newCard.appendChild(paraSurname);
+  newCard.appendChild(paraEmail);
+
+  document.getElementById('listofcontent').appendChild(newCard);
 }
 
 // Assume we have the following data in the Database:
