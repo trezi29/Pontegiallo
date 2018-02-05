@@ -25,15 +25,15 @@
   <section>
     <form class="pg__form" novalidate>
       <div class="pg__formfield">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" onblur="validateText('name')">
+        <label id="nameLabel" for="name">Nome</label>
+        <input type="text" id="name" onblur="validateText('name'); moveLabel(this.id)">
       </div>
       <div class="pg__formfield">
-        <label for="surname">Cognome:</label>
+        <label for="surname">Cognome</label>
         <input type="text" id="surname" onblur="validateText('surname')">
       </div>
       <div class="pg__formfield">
-        <label for="email">Email:</label>
+        <label for="email">Email</label>
         <input type="email" id="email" onblur="validateEmail('email')">
       </div>
     </form>
@@ -46,6 +46,7 @@
     <div id="listofcontent"></div>
   </section>
 
+  <script src="scripts/form.js"></script>
   <script src="scripts/validation.js"></script>
   <script src="scripts/submit.js"></script>
   <script src="scripts/readPending.js"></script>

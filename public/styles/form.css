@@ -11,9 +11,34 @@ section {
 }
 
 .pg__formfield {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  position: relative;
   margin: 20px 0;
+}
+
+.pg__formfield label {
+  color: #000;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 8px;
+  left: 0;
+  font-size: 20px;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+
+.pg__formfield input {
+  box-sizing: border-box;
+  border-width: 0 0 2px;
+  border-color: yellow;
+  height: 50px;
+  font-size: 20px;
+  width: 100%;
+  background-color: transparent;
+}
+
+.pg__formfield input:focus {
+  outline: 0;
 }
 
 .button {

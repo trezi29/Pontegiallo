@@ -23,13 +23,13 @@ function validateText(textValue) {
   var re = /[A-Za-z]$/;
 
   if (re.test(document.getElementById(textValue).value)) {
-    document.getElementById(textValue).style.border = '2px solid green';
+    document.getElementById(textValue).style.borderColor = 'green';
     isErrorPresent = formErrors.indexOf(textValue);
     isErrorPresent > -1 ? formErrors.splice(isErrorPresent, 1) : '';
     console.log(formErrors);
     // enableSubmitButton();
   } else {
-    document.getElementById(textValue).style.border = '2px solid red';
+    document.getElementById(textValue).style.borderColor = 'red';
     isErrorPresent = formErrors.indexOf(textValue);
     isErrorPresent > -1 ? '' : formErrors.push(textValue);
     console.log(formErrors);
@@ -41,13 +41,13 @@ function validateEmail(mailValue) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   if (re.test(document.getElementById(mailValue).value)) {
-    document.getElementById(mailValue).style.border = '2px solid green';
+    document.getElementById(mailValue).style.borderColor = 'green';
     isErrorPresent = formErrors.indexOf(mailValue);
     isErrorPresent > -1 ? formErrors.splice(isErrorPresent, 1) : '';
     console.log(formErrors);
     // enableSubmitButton();
   } else {
-    document.getElementById(mailValue).style.border = '2px solid red';
+    document.getElementById(mailValue).style.borderColor = 'red';
     isErrorPresent = formErrors.indexOf(mailValue);
     isErrorPresent > -1 ? '' : formErrors.push(mailValue);
     console.log(formErrors);
