@@ -18,18 +18,7 @@ function readPending() {
         // console.log(userEmail);
 
         var userData = [userName, userSurname, userEmail];
-        // console.log(userData);
-
-        for (i = userData; i < userData.length; i++) {
-          // var newTab = document.createElement("div");
-          // newTab.className = "pg__tab-richiesta";
-          // document.getElementById('listofcontent').appendChild(newTab);
-          // var newPara = document.createElement("p");
-          // var newContent = document.createTextNode(i);
-          // newPara.appendChild(newContent);
-          // newTab.appendChild(newPara);
-          console.log([i]);
-        }
+        console.log(userData);
 
 
         // var paraName = document.createElement("p");
