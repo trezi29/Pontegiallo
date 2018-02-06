@@ -14,11 +14,14 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+    "rewrites": [{
+      "source": "**",
+      "destination": "/index.html"
+    }],
+    "redirects": [{
+      "source": "/admin",
+      "destination": "/admin.html",
+      "type": 301
+    }]
   }
 }
