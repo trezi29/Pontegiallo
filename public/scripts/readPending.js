@@ -4,30 +4,24 @@ function readPending() {
     .then(function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
         var key = childSnapshot.key;
-        console.log(key);
-        var hasChild = snapshot.hasChild(key); // true
-        console.log(hasChild);
 
-        var userName = snapshot.child(key + '/Nome').val(); // "Ada"
-        // console.log(userName);
+        var userName = snapshot.child(key + '/Nome').val();
 
-        var userSurname = snapshot.child(key + '/Cognome').val(); // "Ada"
-        // console.log(userSurname);
+        var userSurname = snapshot.child(key + '/Cognome').val();
 
-        var userEmail = snapshot.child(key + '/Email').val(); // "Ada"
-        // console.log(userEmail);
+        var userEmail = snapshot.child(key + '/Email').val();
 
-        var userData = [userName, userSurname, userEmail];
-        console.log(userData);
-
-        createCard(userName, userSurname, userEmail);
+        createCard(userName, userSurname, userEmail, key);
       });
+      runForLoop();
     });
 }
 
-function createCard(userName, userSurname, userEmail) {
+//create and append in page a card for every request
+function createCard(userName, userSurname, userEmail, key) {
   var newCard = document.createElement('div');
   newCard.className = "pg__tab-richiesta";
+  newCard.id = key
 
   var paraName = document.createElement('p');
   var paraSurname = document.createElement('p');
@@ -44,23 +38,43 @@ function createCard(userName, userSurname, userEmail) {
   document.getElementById('listofcontent').appendChild(newCard);
 }
 
-// Assume we have the following data in the Database:
-// {
-//   "name": {
-//     "first": "Ada",
-//     "last": "Lovelace"
-//   }
-// }
-//
-// var ref = firebase.database().ref("users/ada");
-// ref.once("value")
-//   .then(function(snapshot) {
-//     var key = snapshot.key; // "ada"
-//     var childKey = snapshot.child("name/last").key; // "last"
-//   });
-// var rootRef = firebase.database().ref();
-// rootRef.once("value")
-//   .then(function(snapshot) {
-//     var key = snapshot.key; // null
-//     var childKey = snapshot.child("users/ada").key; // "ada"
-//   });
+var requestCard = document.getElementsByClassName('pg__tab-richiesta');
+var selectedCards = [];
+
+function listenClickEvent(cardId) {
+  var thisCard = document.getElementById(cardId);
+
+  thisCard.addEventListener('click', function() {
+    selectDeselectCard(cardId)
+  });
+}
+
+function selectDeselectCard(cardId) {
+  var isCardSelected = selectedCards.indexOf(cardId);
+
+  isCardSelected > -1 ? deselectCard(cardId) : selectCard(cardId);
+}
+
+function selectCard(cardId) {
+  var thisCard = document.getElementById(cardId);
+
+  thisCard.style.borderColor = 'red';
+  selectedCards.push(cardId);
+  console.log(selectedCards);
+}
+
+function deselectCard(cardId) {
+  var thisCard = document.getElementById(cardId);
+  var thisCardIndex = selectedCards.indexOf(cardId);
+
+  thisCard.style.borderColor = 'transparent';
+  selectedCards.splice(thisCardIndex, 1);
+  console.log(selectedCards);
+}
+
+function runForLoop() {
+  for (var i = 0; i < requestCard.length; i++) {
+    var elementId = requestCard[i].id;
+    listenClickEvent(elementId);
+  }
+}

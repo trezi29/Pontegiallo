@@ -3,18 +3,15 @@ function writeNewUser(name, surname, email) {
     Nome: name,
     Cognome: surname,
     Email: email
+  }).then(function() {
+    window.location.href = 'https://tesseramento-develop.firebaseapp.com/requestSent.html';
+  }, function(error) {
+    console.log(error);
   });
 }
 
 function submitRequest() {
   validateForm();
 
-  formIsValid ?
-  // var userName = document.getElementById('name').value;
-  // var userSurname = document.getElementById('surname').value;
-  // var userEmail = document.getElementById('email').value;
-  // console.log(userName + userSurname + userEmail);
-  // console.log('formErrors:');
-  // console.log(formErrors);
-  writeNewUser(userName, userSurname, userEmail) : console.log('Errors in fields: ' + formErrors);
+  formIsValid ? writeNewUser(userName, userSurname, userEmail) : console.log('Errors in fields: ' + formErrors);
 }

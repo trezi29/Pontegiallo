@@ -3,11 +3,32 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>admin page</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/4.9.0/firebase-app.js"></script>
+  <script defer src="/__/firebase/4.9.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/4.9.0/firebase-database.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+  <link rel="stylesheet" type="text/css" href="styles/tab-richieste.css">
 </head>
 
 <body>
-  <h1>Hello world!</h1>
+  <section class="pg__navigation">
+    <button class="pg__tab" id="readPendingButton" onclick="readPending()">Richieste</button>
+    <button class="pg__tab" id="readApprovedButton" onclick="">Approvate</button>
+    <button class="pg__tab" id="readMembersButton" onclick="">Soci</button>
+  </section>
+  <section class="pg__listcontainer">
+    <div id="listofcontent"></div>
+    <button class="pg__button" id="approveSelectedRequests" onclick="approvePending()">Approva richieste</button>
+  </section>
+
+  <script src="scripts/readPending.js"></script>
+  <script src="scripts/approvePending.js"></script>
 </body>
 
 </html>

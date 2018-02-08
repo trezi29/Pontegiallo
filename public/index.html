@@ -12,15 +12,19 @@
   <script defer src="/__/firebase/4.9.0/firebase-database.js"></script>
   <!-- initialize the SDK after all desired features are loaded -->
   <script defer src="/__/firebase/init.js"></script>
+  <script src="scripts/anime.min.js"></script>
+  <script src="scripts/animations.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/normalize.css">
   <link rel="stylesheet" type="text/css" href="styles/form.css">
-  <link rel="stylesheet" type="text/css" href="styles/tab-richieste.css">
 
 </head>
 
 <body>
-  <section>
-    <form class="pg__form" novalidate>
+  <section class="pg_logo">
+    <img src="assets/logoPontegiallo.svg" alt="Logo Ciclofficina Pontegiallo">
+  </section>
+  <section class="pg__form">
+    <form novalidate>
       <div class="pg__formfield">
         <label id="nameLabel" for="name">Nome</label>
         <input type="text" id="name" onblur="validateText('name')">
@@ -37,16 +41,11 @@
     <div class="button">
       <button id="submitButton" onclick="submitRequest()">Richiedi tessera</button>
     </div>
-    <div class="button secondary">
-      <button id="readPendingButton" onclick="readPending()">Vedi richieste</button>
-    </div>
-    <div id="listofcontent"></div>
   </section>
 
   <script src="scripts/form.js"></script>
   <script src="scripts/validation.js"></script>
   <script src="scripts/submit.js"></script>
-  <script src="scripts/readPending.js"></script>
 </body>
 
 </html>
