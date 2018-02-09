@@ -1,32 +1,41 @@
-[debug] [2018-02-08T13:27:00.497Z] ----------------------------------------------------------------------
-[debug] [2018-02-08T13:27:00.500Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2018-02-08T13:27:00.500Z] CLI Version:   3.17.4
-[debug] [2018-02-08T13:27:00.500Z] Platform:      darwin
-[debug] [2018-02-08T13:27:00.500Z] Node Version:  v7.10.0
-[debug] [2018-02-08T13:27:00.501Z] Time:          Thu Feb 08 2018 14:27:00 GMT+0100 (CET)
-[debug] [2018-02-08T13:27:00.501Z] ----------------------------------------------------------------------
+[debug] [2018-02-08T17:59:46.741Z] ----------------------------------------------------------------------
+[debug] [2018-02-08T17:59:46.745Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-02-08T17:59:46.745Z] CLI Version:   3.17.4
+[debug] [2018-02-08T17:59:46.746Z] Platform:      darwin
+[debug] [2018-02-08T17:59:46.746Z] Node Version:  v7.10.0
+[debug] [2018-02-08T17:59:46.746Z] Time:          Thu Feb 08 2018 18:59:46 GMT+0100 (CET)
+[debug] [2018-02-08T17:59:46.746Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-02-08T13:27:00.513Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-02-08T13:27:00.514Z] > authorizing via signed-in user
-[debug] [2018-02-08T13:27:00.516Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tesseramento-develop  
+[debug] [2018-02-08T17:59:46.763Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-08T17:59:46.763Z] > authorizing via signed-in user
+[debug] [2018-02-08T17:59:46.766Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-08T17:59:46.766Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/kPtRIuKmM9L-g6ZHUhetVX2iKSIUs8yfKl96Uq6PGug',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Feb 08 2018 18:59:46 GMT+0100 (CET)
+[debug] [2018-02-08T17:59:47.329Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-08T17:59:47.346Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tesseramento-develop  
   
- Thu Feb 08 2018 14:27:00 GMT+0100 (CET)
-[debug] [2018-02-08T13:27:01.519Z] <<< HTTP RESPONSE 200
-[debug] [2018-02-08T13:27:01.520Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tesseramento-develop/tokens  
+ Thu Feb 08 2018 18:59:47 GMT+0100 (CET)
+[debug] [2018-02-08T17:59:48.494Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-08T17:59:48.495Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tesseramento-develop/tokens  
   
- Thu Feb 08 2018 14:27:01 GMT+0100 (CET)
-[debug] [2018-02-08T13:27:02.370Z] <<< HTTP RESPONSE 200
+ Thu Feb 08 2018 18:59:48 GMT+0100 (CET)
+[debug] [2018-02-08T17:59:49.236Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/mc01387/Documents/Pontegiallo'...
 [info] 
-[debug] [2018-02-08T13:27:02.373Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/tesseramento-develop  
+[debug] [2018-02-08T17:59:49.239Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/tesseramento-develop  
   
- Thu Feb 08 2018 14:27:02 GMT+0100 (CET)
-[debug] [2018-02-08T13:27:03.212Z] <<< HTTP RESPONSE 200
-[debug] [2018-02-08T13:27:03.213Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/728523130559/clients/_:getWebAppConfig  
+ Thu Feb 08 2018 18:59:49 GMT+0100 (CET)
+[debug] [2018-02-08T17:59:50.072Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-08T17:59:50.072Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/728523130559/clients/_:getWebAppConfig  
   
- Thu Feb 08 2018 14:27:03 GMT+0100 (CET)
-[debug] [2018-02-08T13:27:04.234Z] <<< HTTP RESPONSE 200
+ Thu Feb 08 2018 18:59:50 GMT+0100 (CET)
+[debug] [2018-02-08T17:59:50.500Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
 

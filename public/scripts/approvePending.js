@@ -6,7 +6,7 @@ function moveCardToApproved(key) { //move selected cards to approved folder
 
     approvedRequest.set(snapshot.val(), deletePending(key)); // write card to new location and run delete function on callback
 
-  }, function (errorObject) {
+  }, function(errorObject) {
     console.log("The read failed: " + errorObject.code);
   });
 }
@@ -19,5 +19,23 @@ function approvePending() {
 }
 
 function deletePending(key) {
-  firebase.database().ref('richieste/').child(key).remove();
+  firebase.database().ref('richieste/').child(key).remove().then(function() {
+    // refreshPending();
+  }, function(error) {
+    console.log(error);
+  });
+}
+
+// update cards in page to display only not approved cards
+var inPageCards = document.getElementsByClassName('pg__tab-richiesta');
+
+function refreshPending() {
+  for (var i = 0; i < inPageCards.length; i++) {
+    var elementId = inPageCards[i];
+    removeApprovedCards(elementId);
+  }
+}
+
+function removeApprovedCards(key) {
+  var query = firebase.database().ref('richieste').orderByKey();
 }

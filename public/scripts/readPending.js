@@ -1,25 +1,31 @@
 function readPending() {
-  var query = firebase.database().ref('richieste').orderByKey();
-  query.once("value")
-    .then(function(snapshot) {
-      snapshot.forEach(function(childSnapshot) {
-        var key = childSnapshot.key;
+  var pendingList = document.getElementById('pg__pendingList');
 
-        var userName = snapshot.child(key + '/Nome').val();
+  if (pendingList.style.display === '') {
+    var query = firebase.database().ref('richieste').orderByKey();
 
-        var userSurname = snapshot.child(key + '/Cognome').val();
+    query.once("value")
+      .then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          var key = childSnapshot.key;
 
-        var userEmail = snapshot.child(key + '/Email').val();
+          var userName = snapshot.child(key + '/Nome').val();
 
-        createCard(userName, userSurname, userEmail, key);
+          var userSurname = snapshot.child(key + '/Cognome').val();
+
+          var userEmail = snapshot.child(key + '/Email').val();
+
+          createCard(userName, userSurname, userEmail, key);
+        });
+        runForLoop();
       });
-      runForLoop();
-    });
+    }
 }
 
 //create and append in page a card for every request
 function createCard(userName, userSurname, userEmail, key) {
   var newCard = document.createElement('div');
+  var pendingList = document.getElementById('pg__pendingList');
   newCard.className = "pg__tab-richiesta";
   newCard.id = key
 
@@ -35,8 +41,11 @@ function createCard(userName, userSurname, userEmail, key) {
   newCard.appendChild(paraSurname);
   newCard.appendChild(paraEmail);
 
-  document.getElementById('listofcontent').appendChild(newCard);
+  pendingList.appendChild(newCard);
+  pendingList.style.display = 'block';
 }
+
+//select and deselect cards
 
 var requestCard = document.getElementsByClassName('pg__tab-richiesta');
 var selectedCards = [];
