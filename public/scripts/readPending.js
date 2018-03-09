@@ -1,7 +1,15 @@
-function readPending() {
-  var pendingList = document.getElementById('pg__pendingList');
+const pendingList = document.getElementById('pg__pendingList');
+const approvedList = document.getElementById('pg__approvedList');
+const membersList = document.getElementById('pg__membersList');
 
+function readPending() {
   if (pendingList.style.display === '') {
+    approvedList.style.display = '';
+    membersList.style.display = '';
+    while(requestCard.length > 0){
+        requestCard[0].parentNode.removeChild(requestCard[0]);
+    }
+
     var query = firebase.database().ref('richieste').orderByKey();
 
     query.once("value")
@@ -15,17 +23,16 @@ function readPending() {
 
           var userEmail = snapshot.child(key + '/Email').val();
 
-          createCard(userName, userSurname, userEmail, key);
+          createPendingCard(userName, userSurname, userEmail, key);
         });
-        runForLoop();
+        runForLoop(requestCard);
       });
     }
 }
 
 //create and append in page a card for every request
-function createCard(userName, userSurname, userEmail, key) {
+function createPendingCard(userName, userSurname, userEmail, key) {
   var newCard = document.createElement('div');
-  var pendingList = document.getElementById('pg__pendingList');
   newCard.className = "pg__tab-richiesta";
   newCard.id = key
 
@@ -45,9 +52,10 @@ function createCard(userName, userSurname, userEmail, key) {
   pendingList.style.display = 'block';
 }
 
-//select and deselect cards
-
+/// select and deselect cards
 var requestCard = document.getElementsByClassName('pg__tab-richiesta');
+var approvedCard = document.getElementsByClassName('pg__tab-approvata');
+var memberCard = document.getElementsByClassName('pg__tab-soci');
 var selectedCards = [];
 
 function listenClickEvent(cardId) {
@@ -81,9 +89,9 @@ function deselectCard(cardId) {
   console.log(selectedCards);
 }
 
-function runForLoop() {
-  for (var i = 0; i < requestCard.length; i++) {
-    var elementId = requestCard[i].id;
+function runForLoop(cardsList) {
+  for (var i = 0; i < cardsList.length; i++) {
+    var elementId = cardsList[i].id;
     listenClickEvent(elementId);
   }
 }

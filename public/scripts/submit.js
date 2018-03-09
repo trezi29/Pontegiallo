@@ -1,5 +1,5 @@
 function writeNewUser(name, surname, email) {
-  firebase.database().ref('richieste/' + name + surname).set({
+  firebase.database().ref('richieste/').push().set({
     Nome: name,
     Cognome: surname,
     Email: email

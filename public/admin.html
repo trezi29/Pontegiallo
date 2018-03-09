@@ -20,23 +20,28 @@
 <body>
   <section class="pg__navigation">
     <button class="pg__tab" id="readPendingButton" onclick="readPending()">Richieste</button>
-    <button class="pg__tab" id="readApprovedButton" onclick="">Approvate</button>
-    <button class="pg__tab" id="readMembersButton" onclick="">Soci</button>
+    <button class="pg__tab" id="readApprovedButton" onclick="readApproved()">Approvate</button>
+    <button class="pg__tab" id="readMembersButton" onclick="readMembers()">Soci</button>
   </section>
   <section class="pg__listcontainer">
     <div id="pg__pendingList">
       <button class="pg__button" id="approveSelectedRequests" onclick="approvePending()">Approva richieste</button>
+      <!-- <button class="pg__button" id="selectAllRequests" onclick="selectAllPending()">Seleziona tutte</button> -->
     </div>
     <div id="pg__approvedList">
-      <button class="pg__button" id="approveSelectedRequests" onclick="approvePending()">Approva richieste</button>
+      <button class="pg__button" id="confirmNewMembers" onclick="newMember()">Conferma nuovo socio</button>
     </div>
     <div id="pg__membersList">
-      <button class="pg__button" id="approveSelectedRequests" onclick="approvePending()">Approva richieste</button>
+      <button class="pg__button" id="deleteMember" onclick="deleteMember()">Elimina membri</button>
     </div>
   </section>
 
   <script src="scripts/readPending.js"></script>
   <script src="scripts/approvePending.js"></script>
+  <script src="scripts/readApproved.js"></script>
+  <script src="scripts/approveApproved.js"></script>
+  <script src="scripts/readMembers.js"></script>
+  <script src="scripts/deleteMembers.js"></script>
 </body>
 
 </html>

@@ -20,22 +20,17 @@ function approvePending() {
 
 function deletePending(key) {
   firebase.database().ref('richieste/').child(key).remove().then(function() {
-    // refreshPending();
+    removeApprovedCard(key);
   }, function(error) {
     console.log(error);
   });
 }
 
 // update cards in page to display only not approved cards
-var inPageCards = document.getElementsByClassName('pg__tab-richiesta');
+function removeApprovedCard(key) {
+  const thisCard = document.getElementById(key);
+  const thisCardIndex = selectedCards.indexOf(key);
 
-function refreshPending() {
-  for (var i = 0; i < inPageCards.length; i++) {
-    var elementId = inPageCards[i];
-    removeApprovedCards(elementId);
-  }
-}
-
-function removeApprovedCards(key) {
-  var query = firebase.database().ref('richieste').orderByKey();
+  // thisCard.remove();
+  selectedCards.splice(thisCardIndex, 1);
 }

@@ -15,7 +15,7 @@
   justify-content: center;
 }
 
-.pg_logo img {
+.pg_logo svg {
   width: 80vw;
 }
 
@@ -45,7 +45,7 @@
 .pg__formfield input {
   box-sizing: border-box;
   border-width: 0 0 2px;
-  border-color: yellow;
+  border-color: #fc0;
   height: 50px;
   font-size: 20px;
   width: 100%;
@@ -54,27 +54,4 @@
 
 .pg__formfield input:focus {
   outline: 0;
-}
-
-.button {
-  height: 40px;
-  width: 200px;
-}
-
-.button:focus {
-  outline: 0;
-}
-
-.button button {
-  height: 100%;
-  width: 100%;
-  color: #000;
-  background-color: yellow;
-  transition: all 0.3s ease-in-out;
-}
-
-.button button:hover {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  transform: translateY(-3px);
 }

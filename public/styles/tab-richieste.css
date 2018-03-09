@@ -34,7 +34,7 @@
     display: none;
 }
 
-.pg__tab-richiesta {
+.pg__tab-richiesta, .pg__tab-approvata, .pg__tab-soci {
   height: 100px;
   width: 400px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
@@ -47,10 +47,18 @@
   border: 2px solid transparent;
 }
 
-.pg__tab-richiesta:hover {
+.pg__tab-richiesta:hover, .pg__tab-approvata:hover, .pg__tab-soci:hover {
   cursor: pointer;
 }
 
 .pg__tab-richiesta p {
+  margin: 0;
+}
+
+.pg__tab-approvata p {
+  margin: 0;
+}
+
+.pg__tab-soci p {
   margin: 0;
 }
