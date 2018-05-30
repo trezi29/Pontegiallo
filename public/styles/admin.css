@@ -34,7 +34,7 @@
     display: none;
 }
 
-.pg__tab-richiesta, .pg__tab-approvata, .pg__tab-soci {
+.pg__tab-pendingList, .pg__tab-approvedList, .pg__tab-membersList {
   height: 100px;
   width: 400px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
@@ -47,18 +47,18 @@
   border: 2px solid transparent;
 }
 
-.pg__tab-richiesta:hover, .pg__tab-approvata:hover, .pg__tab-soci:hover {
+.pg__tab-pendingList:hover, .pg__tab-approvedList:hover, .pg__tab-membersList:hover {
   cursor: pointer;
 }
 
-.pg__tab-richiesta p {
+.pg__tab-pendingList p {
   margin: 0;
 }
 
-.pg__tab-approvata p {
+.pg__tab-approvedList p {
   margin: 0;
 }
 
-.pg__tab-soci p {
+.pg__tab-membersList p {
   margin: 0;
 }

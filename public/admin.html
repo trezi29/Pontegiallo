@@ -14,7 +14,7 @@
   <script defer src="/__/firebase/init.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles/normalize.css">
-  <link rel="stylesheet" type="text/css" href="styles/tab-richieste.css">
+  <link rel="stylesheet" type="text/css" href="styles/admin.css">
 </head>
 
 <body>
@@ -25,14 +25,14 @@
   </section>
   <section id="pg__listcontainer" class="pg__listcontainer">
     <div id="pendingList" class="pg__list">
-      <button class="pg__button" id="approveSelectedRequests" onclick="approvePending()">Approva richieste</button>
+      <button class="pg__button" id="approveSelectedRequests" onclick="moveSelectedCards(id)">Approva richieste</button>
       <!-- <button class="pg__button" id="selectAllRequests" onclick="selectAllPending()">Seleziona tutte</button> -->
     </div>
     <div id="approvedList" class="pg__list">
-      <button class="pg__button" id="confirmNewMembers" onclick="newMember()">Conferma nuovo socio</button>
+      <button class="pg__button" id="confirmNewMembers" onclick="moveSelectedCards(id)">Conferma nuovo socio</button>
     </div>
     <div id="membersList" class="pg__list">
-      <button class="pg__button" id="deleteMember" onclick="deleteMember()">Elimina membri</button>
+      <button class="pg__button" id="deleteMember" onclick="moveSelectedCards(id)">Elimina membri</button>
     </div>
   </section>
 
