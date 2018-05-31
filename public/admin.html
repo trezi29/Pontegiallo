@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles/normalize.css">
   <link rel="stylesheet" type="text/css" href="styles/admin.css">
+  <link rel="stylesheet" type="text/css" href="styles/ui.css">
 </head>
 
 <body>
@@ -25,14 +26,16 @@
   </section>
   <section id="pg__listcontainer" class="pg__listcontainer">
     <div id="pendingList" class="pg__list">
-      <button class="pg__button" id="approveSelectedRequests" onclick="moveSelectedCards(id)">Approva richieste</button>
+      <button class="pg__button primary" id="approveSelectedRequests" onclick="moveSelectedCards(id)">Approva richieste</button>
+      <a id="deleteRequest" onclick="deleteSelectedCards(id)">Elimina richiesta</a>
       <!-- <button class="pg__button" id="selectAllRequests" onclick="selectAllPending()">Seleziona tutte</button> -->
     </div>
     <div id="approvedList" class="pg__list">
-      <button class="pg__button" id="confirmNewMembers" onclick="moveSelectedCards(id)">Conferma nuovo socio</button>
+      <button class="pg__button primary" id="confirmNewMembers" onclick="moveSelectedCards(id)">Conferma nuovo socio</button>
+      <a id="deleteApproved" onclick="deleteSelectedCards(id)">Elimina richiesta</a>
     </div>
     <div id="membersList" class="pg__list">
-      <button class="pg__button" id="deleteMember" onclick="moveSelectedCards(id)">Elimina membri</button>
+      <a id="deleteMember" onclick="deleteSelectedCards(id)">Elimina membri</a>
     </div>
   </section>
 

@@ -103,7 +103,7 @@ function selectDeselectCard(cardId) {
 function selectCard(cardId) {
   var thisCard = document.getElementById(cardId);
 
-  thisCard.style.borderColor = 'red';
+  thisCard.style.borderColor = '#fc0';
   selectedCards.push(cardId);
   console.log(selectedCards);
 }
@@ -130,7 +130,6 @@ function runForLoop(cardsList) {
 function moveCard(key, moveElementsTo) { //move selected cards to desired folder
   moveElementsTo === 'approveSelectedRequests' ? moveElementsFromTo(pendingListRef, approvedListRef) : '';
   moveElementsTo === 'confirmNewMembers' ? moveElementsFromTo(approvedListRef, membersListRef) : '';
-  // moveElementsTo === 'deleteMember' ? console.log('Move ' + key + ' to ' + moveElementsTo) : '';
 
   function moveElementsFromTo(moveFrom, moveTo) {
     var sourceList = firebase.database().ref(moveFrom).child(key);
@@ -161,6 +160,19 @@ function deleteMovedCard(key, deleteFrom) {
   });
 }
 
+function deleteSelectedCards(buttonId) {
+  var thisRef;
+
+  buttonId === 'deleteRequest' ? thisRef = pendingListRef : '';
+  buttonId === 'deleteApproved' ? thisRef = approvedListRef : '';
+  buttonId === 'deleteMember' ? thisRef = membersListRef : '';
+
+  for (var i = 0; i < selectedCards.length; i++) {
+    var elementId = selectedCards[i];
+    deleteMovedCard(elementId, thisRef);
+  }
+}
+
 // update list in page to display only not moved cards
 function refreshModifiedList(key, deleteFrom) {
   //HIDE ALL LISTS
@@ -168,10 +180,13 @@ function refreshModifiedList(key, deleteFrom) {
   for (i = 0; i < listArray.length; ++i) {
     listArray[i].style.display = '';
   }
-
-  //show confirmation of moved cards
-
-
-  // deleteFrom === pendingListRef ? readList('readPendingButton') : '';
-  // deleteFrom === approvedListRef ? readList('readApprovedButton') : '';
 }
+
+//Handle Account Status
+// window.onload = function() {
+//   firebase.auth().onAuthStateChanged(user => {
+//     if(!user) {
+//       window.location = './index.html'; //If User is not logged in, redirect to login page
+//     }
+//   });
+// };
