@@ -1,23 +1,15 @@
 var formErrors = [];
 var submitButton = document.getElementById('submitButton');
 var formIsValid;
-var userName = document.getElementById('name').value;
-var userSurname = document.getElementById('surname').value;
-var userEmail = document.getElementById('email').value;
-
-function validateForm() {
-  userName = document.getElementById('name').value;
-  userSurname = document.getElementById('surname').value;
-  userEmail = document.getElementById('email').value;
-
-  if (formErrors.length === 0 && userName != '' && userSurname != '' && userEmail != '') {
-    formIsValid = true;
-    console.log('Form valido!');
-  } else {
-    formIsValid = false;
-    console.log('Form non valido!');
-  }
-}
+// var userName = document.getElementById('name').value;
+// var userSurname = document.getElementById('surname').value;
+// var userAddress = document.getElementById('indirizzo').value;
+// var userCity = document.getElementById('citta').value;
+// var userProvince = document.getElementById('provincia').value;
+// var userCap = document.getElementById('cap').value;
+// var userBirth = document.getElementById('datadinascita').value;
+// var userPhone = document.getElementById('telefono').value;
+// var userEmail = document.getElementById('email').value;
 
 function validateText(textValue) {
   var re = /[A-Za-z]$/;
