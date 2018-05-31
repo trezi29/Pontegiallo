@@ -58,16 +58,41 @@
         </g>
       </g>
     </svg>
+    <button class="pg__button primary requestcard" id="" onclick="scrollToForm()">Richiedi tessera</button>
   </section>
-  <section class="pg__form">
+  <section class="pg__form" id="formContainer">
     <form novalidate>
       <div class="pg__formfield">
         <label id="nameLabel" for="name">Nome</label>
-        <input type="text" id="name" onblur="validateText('name')">
+        <input type="text" id="name" onblur="validateText(id)">
       </div>
       <div class="pg__formfield">
         <label for="surname">Cognome</label>
-        <input type="text" id="surname" onblur="validateText('surname')">
+        <input type="text" id="surname" onblur="validateText(id)">
+      </div>
+      <div class="pg__formfield">
+        <label for="indirizzo">Indirizzo</label>
+        <input type="text" id="indirizzo" onblur="">
+      </div>
+      <div class="pg__formfield">
+        <label for="citta">Città</label>
+        <input type="text" id="citta" onblur="validateText(id)">
+      </div>
+      <div class="pg__formfield">
+        <label for="provincia">Provincia</label>
+        <input type="text" id="provincia" onblur="validateText(id)">
+      </div>
+      <div class="pg__formfield">
+        <label for="cap">CAP</label>
+        <input type="text" id="cap" onblur="">
+      </div>
+      <div class="pg__formfield">
+        <label for="datadinascita">Data di nascita</label>
+        <input type="text" id="datadinascita" onblur="">
+      </div>
+      <div class="pg__formfield">
+        <label for="telefono">Telefono</label>
+        <input type="tel" id="telefono" onblur="">
       </div>
       <div class="pg__formfield">
         <label for="email">Email</label>

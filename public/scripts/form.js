@@ -1,3 +1,10 @@
+function scrollToForm() {
+  var form = document.getElementById('formContainer');
+
+  form.scrollIntoView({behavior: "smooth"});
+}
+
+
 var inputFields = document.getElementsByTagName('input');
 
 function listenFocusEvent(inputFieldId) {

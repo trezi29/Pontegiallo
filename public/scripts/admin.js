@@ -31,13 +31,11 @@ function readList(navButtonId) {
       }
       //SELECT CARDS FOR THIS LIST
       var userCard = document.getElementsByClassName('pg__tab-' + thisList.id);
-      console.log(thisList.id);
+      console.log(userCard);
       //CLEAN PAGE FROM PREVIOUS VISITS
       while (userCard.length > 0) {
         userCard[0].parentNode.removeChild(userCard[0]);
       }
-      //SHOW THIS LIST
-      thisList.style.display = 'block';
       //CALL FIREBASE TO RETRIVE LIST OF CARDS
       var query = firebase.database().ref(thisRef).orderByKey();
 
@@ -55,6 +53,8 @@ function readList(navButtonId) {
             createCard(userName, userSurname, userEmail, key, thisList);
           });
           runForLoop(userCard);
+          //SHOW THIS LIST
+          thisList.style.display = 'block';
         });
     }
   }
@@ -155,20 +155,23 @@ function moveSelectedCards(buttonId) {
 
 function deleteMovedCard(key, deleteFrom) {
   firebase.database().ref(deleteFrom).child(key).remove().then(function() {
-    refreshModifiedList(deleteFrom);
+    refreshModifiedList(key, deleteFrom);
   }, function(error) {
     console.log(error);
   });
 }
 
 // update list in page to display only not moved cards
-function refreshModifiedList(deleteFrom) {
+function refreshModifiedList(key, deleteFrom) {
   //HIDE ALL LISTS
   let listArray = document.getElementsByClassName('pg__list');
   for (i = 0; i < listArray.length; ++i) {
     listArray[i].style.display = '';
   }
 
-  deleteFrom === pendingListRef ? readList('readPendingButton') : '';
-  deleteFrom === approvedListRef ? readList('readApprovedButton') : '';
+  //show confirmation of moved cards
+
+
+  // deleteFrom === pendingListRef ? readList('readPendingButton') : '';
+  // deleteFrom === approvedListRef ? readList('readApprovedButton') : '';
 }

@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  height: auto;
+  min-height: 100vh;
 }
 
 .pg_logo {
@@ -13,6 +15,7 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .pg_logo svg {
@@ -54,4 +57,9 @@
 
 .pg__formfield input:focus {
   outline: 0;
+}
+
+.pg__button.primary.requestcard {
+  position: absolute;
+  bottom: 50px;
 }
