@@ -10,17 +10,24 @@
 .pg__tab {
   height: 30px;
   border-width: 0 0 2px;
-  border-color: yellow;
+  border-color: #fc0;
   margin: 0 15px;
   text-transform: uppercase;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  cursor: pointer;
 }
 
-.pg__tab:hover {
-  cursor: pointer;
+.pg__tab:hover:not(.pg__tab--selected) {
+  border-width: 0 0 4px;
 }
 
 .pg__tab:focus {
   outline: 0;
+}
+
+.pg__tab.pg__tab--selected {
+  border-width: 0 0 4px;
+  border-color: #000;
 }
 
 .pg__listcontainer {
@@ -43,8 +50,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px 5px;
+  padding: 20px;
   border: 2px solid transparent;
+  border-radius: 8px;
 }
 
 .pg__tab-pendingList:hover, .pg__tab-approvedList:hover, .pg__tab-membersList:hover {
@@ -53,12 +61,15 @@
 
 .pg__tab-pendingList p {
   margin: 0;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .pg__tab-approvedList p {
   margin: 0;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .pg__tab-membersList p {
   margin: 0;
+  font-family: 'Libre Baskerville', serif;
 }

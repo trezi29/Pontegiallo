@@ -46,6 +46,7 @@
 }
 
 .pg__formfield input {
+  font-family: 'Libre Baskerville', serif;
   box-sizing: border-box;
   border-width: 0 0 2px;
   border-color: #fc0;

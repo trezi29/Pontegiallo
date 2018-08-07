@@ -14,6 +14,10 @@ for (i = 0; i < navButtons.length; ++i) {
     console.log("you clicked button controler " + this.id + "!");
     readList(this.id);
     selectedCards = [];  //empty select cards list
+    var navButtonsClass = Array.from(navButtons);
+    navButtonsClass.map(element => element.classList.remove('pg__tab--selected'));
+    var thisNavButton = document.getElementById(this.id);
+    thisNavButton.classList.add('pg__tab--selected');
   });
 }
 

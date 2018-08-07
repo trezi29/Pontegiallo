@@ -1,9 +1,16 @@
 
 /* BUTTONS */
 
+.pg__actions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .pg__button.primary {
   height: 40px;
-  width: 200px;
+  min-width: 200px;
   color: #000;
   text-transform: uppercase;
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -24,7 +31,7 @@
 }
 
 .pg__button.secondary {
-  margin: 0 20px;
+  margin: 0 0 0 20px;
   color: #000;
   text-transform: uppercase;
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -42,18 +49,11 @@
   left: 0;
   width: 0;
   background-color: #000;
-  transition: width 0.5s linear;
+  transition: width 0.3s linear;
 }
 
 .pg__button.secondary:hover::after {
   content: '';
   width: 100%;
-  transition: width 0.5s linear;
-}
-
-.pg__actions-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  transition: width 0.3s linear;
 }

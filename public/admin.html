@@ -13,6 +13,7 @@
   <!-- initialize the SDK after all desired features are loaded -->
   <script defer src="/__/firebase/init.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles/normalize.css">
   <link rel="stylesheet" type="text/css" href="styles/admin.css">
   <link rel="stylesheet" type="text/css" href="styles/ui.css">
@@ -33,11 +34,15 @@
       </div>
     </div>
     <div id="approvedList" class="pg__list">
-      <button class="pg__button primary" id="confirmNewMembers" onclick="moveSelectedCards(id)">Conferma nuovo socio</button>
-      <a class="pg__button secondary" id="deleteApproved" onclick="deleteSelectedCards(id)">Elimina richiesta</a>
+      <div class="pg__actions-container">
+        <button class="pg__button primary" id="confirmNewMembers" onclick="moveSelectedCards(id)">Conferma nuovo socio</button>
+        <a class="pg__button secondary" id="deleteApproved" onclick="deleteSelectedCards(id)">Elimina richiesta</a>
+      </div>
     </div>
     <div id="membersList" class="pg__list">
-      <a class="pg__button secondary" id="deleteMember" onclick="deleteSelectedCards(id)">Elimina membri</a>
+      <div class="pg__actions-container">
+        <a class="pg__button secondary" id="deleteMember" onclick="deleteSelectedCards(id)">Elimina membri</a>
+      </div>
     </div>
   </section>
 
