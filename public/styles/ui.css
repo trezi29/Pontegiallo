@@ -22,3 +22,38 @@
   cursor: pointer;
   transform: translateY(-3px);
 }
+
+.pg__button.secondary {
+  margin: 0 20px;
+  color: #000;
+  text-transform: uppercase;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 20px;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.pg__button.secondary::after {
+  content: '';
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  background-color: #000;
+  transition: width 0.5s linear;
+}
+
+.pg__button.secondary:hover::after {
+  content: '';
+  width: 100%;
+  transition: width 0.5s linear;
+}
+
+.pg__actions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

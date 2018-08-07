@@ -18,7 +18,7 @@ function moveLabelUp(inputFieldId) {
     var elementParent = document.getElementById(inputFieldId).parentNode;
     var label = elementParent.getElementsByTagName('label');
 
-    isInputEmpty == '' ? label[0].style.bottom = '20px' : '';
+    isInputEmpty == '' ? label[0].style.bottom = '25px' : '';
     isInputEmpty == '' ? label[0].style.fontSize = '12px' : '';
 }
 

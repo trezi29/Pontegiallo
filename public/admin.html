@@ -26,16 +26,18 @@
   </section>
   <section id="pg__listcontainer" class="pg__listcontainer">
     <div id="pendingList" class="pg__list">
-      <button class="pg__button primary" id="approveSelectedRequests" onclick="moveSelectedCards(id)">Approva richieste</button>
-      <a id="deleteRequest" onclick="deleteSelectedCards(id)">Elimina richiesta</a>
-      <!-- <button class="pg__button" id="selectAllRequests" onclick="selectAllPending()">Seleziona tutte</button> -->
+      <div class="pg__actions-container">
+        <button class="pg__button primary" id="approveSelectedRequests" onclick="moveSelectedCards(id)">Approva richieste</button>
+        <a class="pg__button secondary" id="deleteRequest" onclick="deleteSelectedCards(id)">Elimina richiesta</a>
+        <!-- <button class="pg__button" id="selectAllRequests" onclick="selectAllPending()">Seleziona tutte</button> -->
+      </div>
     </div>
     <div id="approvedList" class="pg__list">
       <button class="pg__button primary" id="confirmNewMembers" onclick="moveSelectedCards(id)">Conferma nuovo socio</button>
-      <a id="deleteApproved" onclick="deleteSelectedCards(id)">Elimina richiesta</a>
+      <a class="pg__button secondary" id="deleteApproved" onclick="deleteSelectedCards(id)">Elimina richiesta</a>
     </div>
     <div id="membersList" class="pg__list">
-      <a id="deleteMember" onclick="deleteSelectedCards(id)">Elimina membri</a>
+      <a class="pg__button secondary" id="deleteMember" onclick="deleteSelectedCards(id)">Elimina membri</a>
     </div>
   </section>
 
