@@ -91,35 +91,35 @@ function logInSuccesful() {
   window.location.href = '/admin.html';
 }
 
-function logOut() {
-  firebase.auth().signOut()
-  .then(function() {
-    // Sign-out successful.
-    console.log('Logged out');
-  })
-  .catch(function(error) {
-    // An error happened
-    console.log(error);
-  });
-}
+// function logOut() {
+//   firebase.auth().signOut()
+//   .then(function() {
+//     // Sign-out successful.
+//     console.log('Logged out');
+//   })
+//   .catch(function(error) {
+//     // An error happened
+//     console.log(error);
+//   });
+// }
 
-function checkUserStatus() {
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
-      console.log(email + ' logged in');
-      // ...
-    } else {
-      // User is signed out.
-      // ...
-      console.log('User not logged in');
-    }
-  });
-}
+// function checkUserStatus() {
+//   firebase.auth().onAuthStateChanged(function(user) {
+//     if (user) {
+//       // User is signed in.
+//       var displayName = user.displayName;
+//       var email = user.email;
+//       var emailVerified = user.emailVerified;
+//       var photoURL = user.photoURL;
+//       var isAnonymous = user.isAnonymous;
+//       var uid = user.uid;
+//       var providerData = user.providerData;
+//       console.log(email + ' logged in');
+//       // ...
+//     } else {
+//       // User is signed out.
+//       // ...
+//       console.log('User not logged in');
+//     }
+//   });
+// }

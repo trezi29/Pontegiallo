@@ -73,3 +73,9 @@
   margin: 0;
   font-family: 'Libre Baskerville', serif;
 }
+
+.pg__logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

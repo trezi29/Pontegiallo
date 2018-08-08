@@ -186,11 +186,23 @@ function refreshModifiedList(key, deleteFrom) {
   }
 }
 
-//Handle Account Status
-// window.onload = function() {
-//   firebase.auth().onAuthStateChanged(user => {
-//     if(!user) {
-//       window.location = './index.html'; //If User is not logged in, redirect to login page
-//     }
-//   });
-// };
+// Handle Account Status
+window.onload = function() {
+  firebase.auth().onAuthStateChanged(user => {
+    if(!user) {
+      window.location = './login.html'; //If User is not logged in, redirect to login page
+    }
+  });
+};
+
+function logOut() {
+  firebase.auth().signOut()
+  .then(function() {
+    // Sign-out successful.
+    console.log('Logged out');
+  })
+  .catch(function(error) {
+    // An error happened
+    console.log(error);
+  });
+}
